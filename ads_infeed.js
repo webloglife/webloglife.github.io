@@ -15,8 +15,7 @@
 			var self = Ads.Infeed;
 			var _entrySelector ='div.entry-list a';
 			
-			if(document.querySelectorAll("div#footer-menu a.pcpage").length === 0 ) {
-			
+			if(document.querySelectorAll("div#footer-menu a.pcpage").length === 0 ) {	
 				_entrySelector='div.archive-entries section';
 			}
 			var _entrys = document.querySelectorAll(_entrySelector);
@@ -25,7 +24,7 @@
 			_addHTML.setAttribute("class", "list-entry-article");
 			i = 0;
 			_entrys.forEach(function(index,val){
-				if(Math.floor(i)%self.num==0){
+				if(Math.floor(i%self.num)==0){
 					_addHTML.innerHTML = self.content;
 					_entrys[i].insertAdjacentHTML('afterend',_addHTML.outerHTML);
 					(adsbygoogle = window.adsbygoogle || []).push({});
